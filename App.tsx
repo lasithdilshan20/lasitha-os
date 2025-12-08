@@ -311,7 +311,9 @@ const DesktopView: React.FC<{onAppOpen: (app: AppDefinition) => void; iconSize: 
   onAppOpen,
   iconSize,
 }) => (
-  <div className="flex flex-wrap content-start p-4">
+  <div className="flex flex-wrap content-start gap-2 p-8" style={{
+    background: 'linear-gradient(to bottom, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%)',
+  }}>
     {APP_DEFINITIONS_CONFIG.map((app) => (
       <Icon key={app.id} app={app} onInteract={() => onAppOpen(app)} iconSize={iconSize} />
     ))}

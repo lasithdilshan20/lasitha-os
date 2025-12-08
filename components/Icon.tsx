@@ -17,14 +17,17 @@ export const Icon: React.FC<IconProps> = ({app, onInteract, iconSize = 'md'}) =>
   const glyphSize = iconSize === 'sm' ? 'text-5xl' : iconSize === 'lg' ? 'text-7xl' : 'text-6xl';
   return (
     <div
-      className={`${containerSize} flex flex-col items-center justify-start text-center m-2 p-2 cursor-pointer select-none rounded-xl transition-all hover:bg-white/50 focus:bg-white/60 focus:outline-none focus:ring-2 focus:ring-blue-400 icon-hover-glow`}
+      className={`${containerSize} flex flex-col items-center justify-center text-center m-3 p-3 cursor-pointer select-none rounded-2xl transition-all duration-300 hover:bg-white/60 active:bg-white/70 focus:bg-white/60 focus:outline-none focus:ring-2 focus:ring-blue-400/50 icon-hover-glow backdrop-blur-sm`}
       onClick={onInteract}
       onKeyDown={(e) => e.key === 'Enter' && onInteract()}
       tabIndex={0}
       role="button"
-      aria-label={`Open ${app.name}`}>
-      <div className={`${glyphSize} mb-2`}>{app.icon}</div>
-      <div className="text-sm text-gray-800 font-semibold break-words max-w-full leading-tight">
+      aria-label={`Open ${app.name}`}
+      style={{
+        boxShadow: '0 2px 8px rgba(15, 23, 42, 0.08)',
+      }}>
+      <div className={`${glyphSize} mb-2 icon-image`}>{app.icon}</div>
+      <div className="text-sm text-gray-900 font-semibold break-words max-w-full leading-tight tracking-tight drop-shadow-sm">
         {app.name}
       </div>
     </div>

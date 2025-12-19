@@ -37,7 +37,7 @@ Collaboration with product and development teams is pivotal in my role, enabling
         <button class="llm-button" data-interaction-id="go_back_about_home">⬅ Back</button>
       </div>
       <div class="llm-row" style="align-items: center; gap: 12px;">
-        <img src="profile/profile-pic.png" alt="Profile photo of Lasitha" class="m-2 w-24 h-24 rounded-full object-cover ring-2 ring-blue-500 shadow" />
+        <img src="/lasitha-os/profile/profile-pic.png" alt="Profile photo of Lasitha" class="m-2 w-24 h-24 rounded-full object-cover ring-2 ring-blue-500 shadow" />
         <div>
           <p class="llm-title" style="margin-bottom: 4px;">About Lasitha</p>
           <p class="llm-text" style="margin-top: 0; color: #475569;">Software Developer In Test</p>
@@ -56,13 +56,13 @@ const getProjectsInitialHTML = (): string => {
       <div class="llm-row">
         <div class="icon" data-interaction-id="open_projects_github" data-interaction-type="folder_open">
           <div class="icon-image">
-            <img src="profile/github.png" alt="GitHub" class="block mx-auto w-12 h-12 mb-2 object-contain rounded-md shadow" />
+            <img src="/lasitha-os/profile/github.png" alt="GitHub" class="block mx-auto w-12 h-12 mb-2 object-contain rounded-md shadow" />
           </div>
           <div class="icon-label">GitHub Repos</div>
         </div>
         <div class="icon" data-interaction-id="open_projects_npm" data-interaction-type="folder_open">
           <div class="icon-image">
-            <img src="profile/npm.png" alt="NPM" class="block mx-auto w-12 h-12 mb-2 object-contain rounded-md shadow" />
+            <img src="/lasitha-os/profile/npm.png" alt="NPM" class="block mx-auto w-12 h-12 mb-2 object-contain rounded-md shadow" />
           </div>
           <div class="icon-label">NPM Plugins</div>
         </div>
@@ -283,13 +283,13 @@ const getLinksHTML = (): string => {
         </div>
         <div class="icon" data-interaction-id="open_link_github" data-interaction-type="folder_open">
           <div class="icon-image">
-            <img src="profile/github.png" alt="GitHub" class="block mx-auto w-12 h-12 mb-2 object-contain rounded-md shadow" />
+            <img src="/lasitha-os/profile/github.png" alt="GitHub" class="block mx-auto w-12 h-12 mb-2 object-contain rounded-md shadow" />
           </div>
           <div class="icon-label">GitHub</div>
         </div>
         <div class="icon" data-interaction-id="open_link_npm" data-interaction-type="folder_open">
           <div class="icon-image">
-            <img src="profile/npm.png" alt="NPM" class="block mx-auto w-12 h-12 mb-2 object-contain rounded-md shadow" />
+            <img src="/lasitha-os/profile/npm.png" alt="NPM" class="block mx-auto w-12 h-12 mb-2 object-contain rounded-md shadow" />
           </div>
           <div class="icon-label">npmjs</div>
         </div>

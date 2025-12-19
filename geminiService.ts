@@ -7,7 +7,8 @@ import {GoogleGenAI} from '@google/genai';
 import {APP_DEFINITIONS_CONFIG, getSystemPrompt} from '../constants'; // Import getSystemPrompt and APP_DEFINITIONS_CONFIG
 import {InteractionData} from '../types';
 
-if (!process.env.API_KEY) {
+const apiKey = process.env.API_KEY || '';
+if (!apiKey) {
   // This is a critical error. In a real app, you might throw or display a persistent error.
   // For this environment, logging to console is okay, but the app might not function.
   console.error(
@@ -15,7 +16,7 @@ if (!process.env.API_KEY) {
   );
 }
 
-const ai = new GoogleGenAI({apiKey: process.env.API_KEY!}); // The "!" asserts API_KEY is non-null after the check.
+const ai = apiKey ? new GoogleGenAI(apiKey) : null; 
 
 export async function* streamAppContent(
   interactionHistory: InteractionData[],
@@ -23,7 +24,7 @@ export async function* streamAppContent(
 ): AsyncGenerator<string, void, void> {
   const model = 'gemini-2.5-flash-lite'; // Updated model
 
-  if (!process.env.API_KEY) {
+  if (!apiKey || !ai) {
     yield `<div class="p-4 text-red-700 bg-red-100 rounded-lg">
       <p class="font-bold text-lg">Configuration Error</p>
       <p class="mt-2">The API_KEY is not configured. Please set the API_KEY environment variable.</p>
@@ -97,7 +98,7 @@ ${JSON.stringify(currentInteraction, null, 1)}
 Generate the HTML content for the window's content area only:`;
 
   try {
-    const response = await ai.models.generateContentStream({
+    const response = await ai!.models.generateContentStream({
       model: model,
       contents: fullPrompt,
       // Removed thinkingConfig to use default (enabled thinking) for higher quality responses

@@ -4,7 +4,9 @@
 */
 /* tslint:disable */
 import {GoogleGenAI} from '@google/genai';
+// @ts-ignore
 import {APP_DEFINITIONS_CONFIG, getSystemPrompt} from '../constants'; // Import getSystemPrompt and APP_DEFINITIONS_CONFIG
+// @ts-ignore
 import {InteractionData} from '../types';
 
 const apiKey = process.env.API_KEY || '';

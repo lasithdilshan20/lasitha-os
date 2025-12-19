@@ -708,7 +708,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className={`${theme === 'dark' ? 'theme-dark' : ''} w-full min-h-screen flex items-center justify-center p-4`}>
+    <div className={`${theme === 'dark' ? 'theme-dark' : ''} w-full min-h-screen flex items-center justify-center p-4 relative overflow-hidden`}>
       <Window
         title={windowTitle}
         onClose={handleMasterClose}
